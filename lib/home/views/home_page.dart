@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+import 'package:to_do_app/home/widgets/add_button.dart';
+import 'package:to_do_app/home/widgets/list_view_note.dart';
+import 'package:to_do_app/home/widgets/no_tasks_yet.dart';
+import 'package:to_do_app/home/widgets/tasks_widget.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+   List<String> tasks = [];
+
+  void _addTask(String task) {
+    setState(() {
+      tasks.add(task);
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+   body: SingleChildScrollView(
+      child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24,horizontal: 12),
+          child: Column(
+            children: [
+              const SizedBox(height: 14,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Text('Hey, ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                      Text('Hana Hatem ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                    ],
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/Avatar.png'),
+                  )
+                ],
+              ),
+              tasks.isEmpty
+                ? NoTasksYet()
+                : TasksWidget(tasks: tasks)
+            ],
+          ),
+      ),
+   ),
+   floatingActionButton: AddButton(onTaskAdded: _addTask),
+    );
+  }
+}
