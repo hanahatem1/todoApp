@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/home/widgets/add_button.dart';
-import 'package:to_do_app/home/widgets/list_view_note.dart';
-import 'package:to_do_app/home/widgets/no_tasks_yet.dart';
-import 'package:to_do_app/home/widgets/tasks_widget.dart';
+import 'package:to_do_app/home/data/models/task_model.dart';
+import 'package:to_do_app/home/presentation/widgets/add_button.dart';
+import 'package:to_do_app/home/presentation/widgets/list_view_note.dart';
+import 'package:to_do_app/home/presentation/widgets/no_tasks_yet.dart';
+import 'package:to_do_app/home/presentation/widgets/tasks_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,9 +13,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   List<String> tasks = [];
+   List<TaskModel> tasks = [];
 
-  void _addTask(String task) {
+  void _addTask(TaskModel task) {
     setState(() {
       tasks.add(task);
     });
