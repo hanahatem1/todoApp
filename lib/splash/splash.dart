@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do_app/auth/login/login.dart';
 import 'package:to_do_app/auth/widgets/custom_button.dart';
 import 'package:to_do_app/constant/colors.dart';
+import 'package:to_do_app/home/presentation/widgets/home_screen_navigate.dart';
   
 
 class SplashPage extends StatelessWidget {
@@ -42,7 +43,7 @@ class SplashPage extends StatelessWidget {
               const SizedBox(height: 20,),
              GestureDetector(
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (contex)=>LoginPage()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (contex)=>HomeScreenNavigate()));
               },
                child:CustomButton(height: 40, width: double.infinity,text: 'Let\'s go',)
              )

@@ -24,8 +24,8 @@ class BottomNavigation extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'tasks',
+            icon: Icon(Icons.calendar_month),
+            label: 'calender',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

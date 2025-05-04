@@ -3,7 +3,7 @@ import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/home/presentation/views/home_page.dart';
 import 'package:to_do_app/home/presentation/widgets/bottom_navigation_bar.dart';
 import 'package:to_do_app/profile/profile_view.dart';
-import 'package:to_do_app/tasks/task_view.dart';
+import 'package:to_do_app/calender/calender_view.dart';
 
 class HomeScreenNavigate extends StatefulWidget {
   const HomeScreenNavigate({super.key});
@@ -17,7 +17,7 @@ class _HomeScreenNavigateState extends State<HomeScreenNavigate> {
 
   final List<Widget> _screens = const [
     HomePage(),
-    TaskView(),
+    CalenderView(),
     ProfileView(),
   ];
   @override
