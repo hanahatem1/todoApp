@@ -23,7 +23,7 @@ class _HomeScreenNavigateState extends State<HomeScreenNavigate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.whiteColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: _screens[currentIndex],
       bottomNavigationBar: BottomNavigation(
         currentIndex: currentIndex,

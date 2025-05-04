@@ -9,7 +9,7 @@ final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.whiteColor,
+      color: Theme.of(context).cardColor,
       elevation: 2,
       child: Padding(
         padding: EdgeInsets.all(12),

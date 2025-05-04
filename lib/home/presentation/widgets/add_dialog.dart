@@ -17,7 +17,7 @@ class _AddDialogState extends State<AddDialog> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: AppColors.whiteColor,
+      backgroundColor: Theme.of(context).cardColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(31),
       ),

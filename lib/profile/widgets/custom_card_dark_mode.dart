@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/constant/colors.dart';
+import 'package:to_do_app/main.dart';
 
 class CustomCardDarkMode extends StatefulWidget {
   const CustomCardDarkMode({super.key});
@@ -13,7 +14,7 @@ class _CustomCardDarkModeState extends State<CustomCardDarkMode> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.whiteColor,
+      color:  Theme.of(context).cardColor,
       elevation: 2,
       child: Padding(
         padding: EdgeInsets.all(4),
@@ -37,6 +38,8 @@ class _CustomCardDarkModeState extends State<CustomCardDarkMode> {
                   onChanged: (val) {
                     setState(() {
                       isSwitched = val;
+                        themeNotifier.value =
+                        val ? ThemeMode.dark : ThemeMode.light;
                     });
                   }),
             )

@@ -28,8 +28,8 @@ class _ListViewNoteItemState extends State<ListViewNoteItem> {
       background: Container(
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.only(right: 20),
-        color: AppColors.whiteColor,
-        child: const Icon(Icons.delete, color: AppColors.blackColor),
+        color: Theme.of(context).scaffoldBackgroundColor,
+        child:  Icon(Icons.delete, color: Theme.of(context).iconTheme.color),
       ),
        onDismissed: (_) {
         widget.onDelete();
@@ -44,7 +44,7 @@ class _ListViewNoteItemState extends State<ListViewNoteItem> {
       },
       child: Container(
         decoration: BoxDecoration(
-            color: AppColors.whiteColor1,
+            color: Theme.of(context).colorScheme.background,
             borderRadius: BorderRadius.circular(12)),
         child: Column(
           children: [
