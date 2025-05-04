@@ -34,7 +34,12 @@ class _ListViewNoteItemState extends State<ListViewNoteItem> {
        onDismissed: (_) {
         widget.onDelete();
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Task deleted')),
+          SnackBar(
+            backgroundColor: AppColors.greyColor,
+            showCloseIcon: true,
+            closeIconColor: AppColors.blackColor,
+            content: Text('Task deleted',style: TextStyle(color: AppColors.blackColor),)
+            ),
         );
       },
       child: Container(
@@ -60,6 +65,7 @@ class _ListViewNoteItemState extends State<ListViewNoteItem> {
                           children: [
                             Text(widget.task.title,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,decoration: isChecked? TextDecoration.lineThrough: TextDecoration.none),),
                             Text(widget.task.description,style: TextStyle(decoration: isChecked? TextDecoration.lineThrough: TextDecoration.none),),
+                            SizedBox(height: 3,)
                           ],
                         ))
               ],
