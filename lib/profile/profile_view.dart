@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/auth/widgets/custom_button.dart';
-import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/profile/widgets/custom_card.dart';
 import 'package:to_do_app/profile/widgets/custom_card_dark_mode.dart';
 import 'package:to_do_app/profile/widgets/profile_photo.dart';
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
-
+  const ProfileView({super.key, this.onThemeChanged});
+final void Function(bool)? onThemeChanged;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 14,vertical: 40),
         child: Column(
@@ -21,7 +20,10 @@ class ProfileView extends StatelessWidget {
                 children: [
                  ProfilePhoto(),
                   SizedBox(height: 12,),
-                  Text('Hana Hatem',style: TextStyle(color: AppColors.blackColor,fontWeight: FontWeight.bold,fontSize: 15),)
+                  Text('Hana Hatem',style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ))
                 ],
               ),
             ),

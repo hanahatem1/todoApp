@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/auth/sign%20up/sign_up.dart';
 import 'package:to_do_app/auth/widgets/custom_button.dart';
-import 'package:to_do_app/auth/widgets/custom_check_box.dart';
 import 'package:to_do_app/auth/widgets/custom_text_filed.dart';
 import 'package:to_do_app/constant/colors.dart';
 

@@ -3,7 +3,7 @@ import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/home/data/models/task_model.dart';
 
 class AddDialog extends StatefulWidget {
-  final Function(TaskModel) onTaskAdded;  
+  final Function(TaskModel) onTaskAdded;
 
   const AddDialog({super.key, required this.onTaskAdded});
 
@@ -12,8 +12,8 @@ class AddDialog extends StatefulWidget {
 }
 
 class _AddDialogState extends State<AddDialog> {
-    TextEditingController _controller = TextEditingController();
-    TextEditingController _twocontroller = TextEditingController();
+  TextEditingController _controller = TextEditingController();
+  TextEditingController _twocontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -28,11 +28,14 @@ class _AddDialogState extends State<AddDialog> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-                child: Text('Add new task',
-                    style: TextStyle(
-                        color: AppColors.blackColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold))),
+              child: Text(
+                'Add new task',
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+              ),
+            ),
             const SizedBox(height: 16),
             TextField(
               controller: _controller,
@@ -49,7 +52,9 @@ class _AddDialogState extends State<AddDialog> {
                 hintStyle: TextStyle(color: AppColors.greyColor),
               ),
             ),
-            const SizedBox(height: 9,),
+            const SizedBox(
+              height: 9,
+            ),
             TextField(
               controller: _twocontroller,
               maxLines: 2,
@@ -69,8 +74,8 @@ class _AddDialogState extends State<AddDialog> {
               height: 15,
             ),
             Center(
-              child: GestureDetector(
-                onTap: () {
+                child: GestureDetector(
+              onTap: () {
                 final task = TaskModel(
                   title: _controller.text,
                   description: _twocontroller.text,
@@ -78,17 +83,19 @@ class _AddDialogState extends State<AddDialog> {
                 widget.onTaskAdded(task);
                 Navigator.pop(context);
               },
-                child: Container(
-                  height: 40,
-                  width: 120,
-                  decoration: BoxDecoration(
+              child: Container(
+                height: 40,
+                width: 120,
+                decoration: BoxDecoration(
                     color: AppColors.blueColor,
-                    borderRadius: BorderRadius.circular(12)
-                  ),
-                  child: Center(child: Text('Add',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)),
-                ),
-              )
+                    borderRadius: BorderRadius.circular(12)),
+                child: Center(
+                    child: Text(
+                  'Add',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                )),
               ),
+            )),
           ],
         ),
       ),

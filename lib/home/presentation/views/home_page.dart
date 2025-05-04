@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/home/data/models/task_model.dart';
 import 'package:to_do_app/home/presentation/widgets/add_button.dart';
-import 'package:to_do_app/home/presentation/widgets/list_view_note.dart';
 import 'package:to_do_app/home/presentation/widgets/no_tasks_yet.dart';
 import 'package:to_do_app/home/presentation/widgets/tasks_widget.dart';
 

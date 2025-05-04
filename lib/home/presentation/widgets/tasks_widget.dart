@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/home/data/models/task_model.dart';
 import 'package:to_do_app/home/presentation/widgets/list_view_note.dart';
 

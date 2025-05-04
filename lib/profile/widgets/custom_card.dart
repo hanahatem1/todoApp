@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/constant/colors.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key, required this.text, required this.icon});

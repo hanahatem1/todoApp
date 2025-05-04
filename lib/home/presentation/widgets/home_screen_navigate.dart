@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/home/presentation/views/home_page.dart';
 import 'package:to_do_app/home/presentation/widgets/bottom_navigation_bar.dart';
 import 'package:to_do_app/profile/profile_view.dart';
