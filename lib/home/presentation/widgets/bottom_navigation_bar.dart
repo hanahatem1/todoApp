@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/constant/colors.dart';
 
+// ignore: must_be_immutable
 class BottomNavigation extends StatelessWidget {
    BottomNavigation({super.key,
     required this.currentIndex,
