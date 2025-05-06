@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:to_do_app/home/data/models/task_model.dart';
 import 'package:to_do_app/home/presentation/widgets/list_view_note.dart';
 
@@ -22,8 +24,11 @@ class TasksWidget extends StatelessWidget {
                     )),
           ],
         ),
-        ListViewNote(
-          tasks: tasks,
+         ValueListenableBuilder(
+          valueListenable: Hive.box<TaskModel>('to_do_app').listenable(),
+          builder: (context, Box<TaskModel> box, _) {
+            return ListViewNote(); 
+          },
         ),
       ],
     );

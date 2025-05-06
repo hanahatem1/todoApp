@@ -1,34 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:to_do_app/home/data/models/task_model.dart';
 import 'package:to_do_app/home/presentation/widgets/list_view_note_item.dart';
 
-class ListViewNote extends StatefulWidget {
-  final List<TaskModel> tasks;
-
-  const ListViewNote({super.key, required this.tasks});
+class ListViewNote extends StatelessWidget {
+  const ListViewNote({super.key});
 
   @override
-  State<ListViewNote> createState() => _ListViewNoteState();
-}
-
-class _ListViewNoteState extends State<ListViewNote> {
-  @override
+  
   Widget build(BuildContext context) {
+    final box = Hive.box<TaskModel>('to_do_app');
+    final tasks = box.values.toList();
+
     return ListView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      itemCount: widget.tasks.length,
+      itemCount: tasks.length,
       itemBuilder: (context, index) {
+        final task = tasks[index];
         return Padding(
           padding: const EdgeInsets.all(4),
           child: ListViewNoteItem(
-            task: widget.tasks[index],
-             onDelete: () {
-          setState(() {
-            widget.tasks.removeAt(index);
-          });
-             }
-            ),
+            task: task,
+            onDelete: () async {
+              await box.deleteAt(index);
+            },
+          ),
         );
       },
     );

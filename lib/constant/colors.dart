@@ -8,7 +8,5 @@ static const Color blackColor = Color(0xff000000);
 static const Color whiteColor = Color(0xffffffff);
 static const Color greyColor = Color.fromARGB(255, 216, 216, 216);
 static const Color greyColor1 = Color.fromARGB(255, 56, 55, 55);
-//tatic const Color purpleColor = Color(0xff8E7DBE);
-//static const Color pinkColor = Color(0xffF7CFD8);
 
 }

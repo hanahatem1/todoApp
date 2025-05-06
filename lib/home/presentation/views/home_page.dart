@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:to_do_app/home/data/models/task_model.dart';
 import 'package:to_do_app/home/presentation/widgets/add_button.dart';
 import 'package:to_do_app/home/presentation/widgets/no_tasks_yet.dart';
@@ -12,44 +14,45 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   List<TaskModel> tasks = [];
+  final box = Hive.box<TaskModel>('to_do_app');
 
-  void _addTask(TaskModel task) {
-    setState(() {
-      tasks.add(task);
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-   body: SingleChildScrollView(
-      child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24,horizontal: 12),
-          child: Column(
-            children: [
-              const SizedBox(height: 14,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Text('Hey, ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-                      Text('Hana Hatem ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-                    ],
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/Avatar.png'),
-                  )
-                ],
-              ),
-              tasks.isEmpty
-                ? NoTasksYet()
-                : TasksWidget(tasks: tasks)
-            ],
-          ),
-      ),
-   ),
-   floatingActionButton: AddButton(onTaskAdded: _addTask),
+   body:  ValueListenableBuilder(
+        valueListenable: box.listenable(),
+        builder: (context, Box<TaskModel> box, _) {
+          final tasks = box.values.toList();
+    return SingleChildScrollView(
+        child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24,horizontal: 12),
+            child: Column(
+              children: [
+                const SizedBox(height: 14,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Text('Hey, ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                        Text('Hana Hatem ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                      ],
+                    ),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/Avatar.png'),
+                    )
+                  ],
+                ),
+                tasks.isEmpty
+                  ? NoTasksYet()
+                  : TasksWidget(tasks: tasks)
+              ],
+            ),
+        ),
+    );
+        }
+     ),
+   floatingActionButton: AddButton(onTaskAdded: (_){}),
     );
   }
 }

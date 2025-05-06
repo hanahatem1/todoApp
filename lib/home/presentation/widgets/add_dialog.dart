@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/home/data/models/task_model.dart';
 
@@ -74,12 +75,15 @@ class _AddDialogState extends State<AddDialog> {
               height: 15,
             ),
             Center(
-                child: GestureDetector(
-              onTap: () {
+                child: GestureDetector (
+              onTap: () async {
                 final task = TaskModel(
                   title: _controller.text,
                   description: _twocontroller.text,
                 );
+                final box = Hive.box<TaskModel>('to_do_app');
+                  await box.add(task);
+                  
                 widget.onTaskAdded(task);
                 Navigator.pop(context);
               },

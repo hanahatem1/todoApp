@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/auth/widgets/custom_check_box.dart';
+import 'package:to_do_app/home/presentation/widgets/custom_check_box.dart';
 import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/home/data/models/task_model.dart';
 
@@ -7,6 +7,7 @@ class ListViewNoteItem extends StatefulWidget {
   const ListViewNoteItem({super.key, required this.task, required this.onDelete});
  final TaskModel task;
   final VoidCallback onDelete;
+
   @override
   State<ListViewNoteItem> createState() => _ListViewNoteItemState();
 }
@@ -18,6 +19,14 @@ class _ListViewNoteItemState extends State<ListViewNoteItem> {
   void initState() {
     super.initState();
     isChecked = widget.task.isDone;
+  }
+ void _toggleCheck(bool? value) async {
+    setState(() {
+      isChecked = value!;
+    });
+
+    widget.task.isDone = isChecked;
+    await widget.task.save();
   }
 
   @override
@@ -52,11 +61,7 @@ class _ListViewNoteItemState extends State<ListViewNoteItem> {
               children: [
                 CustomCheckBox(
                   value: isChecked,
-                  onChanged: (val){
-                    setState(() {
-                      isChecked = val!;
-                    });
-                  },
+                  onChanged:_toggleCheck
                 ),
                 Expanded(
                     child:
