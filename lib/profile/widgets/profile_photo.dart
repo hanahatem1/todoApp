@@ -12,7 +12,7 @@ class ProfilePhoto extends StatelessWidget {
         height: 110,
         width: 110,
         child:
-         CircleAvatar(backgroundImage: AssetImage('assets/images/Avatar.png')),
+         CircleAvatar(backgroundImage: AssetImage('assets/images/picture.jpg')),
       ),
       Positioned(
         bottom: 10,
