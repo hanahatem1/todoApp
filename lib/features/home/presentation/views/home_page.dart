@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:to_do_app/home/data/models/task_model.dart';
-import 'package:to_do_app/home/presentation/widgets/add_button.dart';
-import 'package:to_do_app/home/presentation/widgets/no_tasks_yet.dart';
-import 'package:to_do_app/home/presentation/widgets/tasks_widget.dart';
+import 'package:to_do_app/features/home/data/models/task_model.dart';
+import 'package:to_do_app/features/home/presentation/widgets/add_button.dart';
+import 'package:to_do_app/features/home/presentation/widgets/no_tasks_yet.dart';
+import 'package:to_do_app/features/home/presentation/widgets/tasks_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/home/presentation/widgets/custom_check_box.dart';
+import 'package:to_do_app/features/home/presentation/widgets/custom_check_box.dart';
 import 'package:to_do_app/constant/colors.dart';
-import 'package:to_do_app/home/data/models/task_model.dart';
+import 'package:to_do_app/features/home/data/models/task_model.dart';
 
 class ListViewNoteItem extends StatefulWidget {
   const ListViewNoteItem({super.key, required this.task, required this.onDelete});
+  
  final TaskModel task;
   final VoidCallback onDelete;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/home/presentation/widgets/custom_button.dart';
+import 'package:to_do_app/features/home/presentation/widgets/custom_button.dart';
 import 'package:to_do_app/constant/colors.dart';
-import 'package:to_do_app/home/presentation/widgets/home_screen_navigate.dart';
+import 'package:to_do_app/features/home/presentation/widgets/home_screen_navigate.dart';
   
 
 class SplashPage extends StatelessWidget {

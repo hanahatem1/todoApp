@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:to_do_app/constant/colors.dart';
-import 'package:to_do_app/home/data/models/task_model.dart';
+import 'package:to_do_app/features/home/data/models/task_model.dart';
 
 class AddDialog extends StatefulWidget {
   final Function(TaskModel) onTaskAdded;

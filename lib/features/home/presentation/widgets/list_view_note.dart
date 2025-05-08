@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:to_do_app/home/data/models/task_model.dart';
-import 'package:to_do_app/home/presentation/widgets/list_view_note_item.dart';
+import 'package:to_do_app/features/home/data/models/task_model.dart';
+import 'package:to_do_app/features/home/presentation/widgets/list_view_note_item.dart';
 
 class ListViewNote extends StatelessWidget {
   const ListViewNote({super.key});
