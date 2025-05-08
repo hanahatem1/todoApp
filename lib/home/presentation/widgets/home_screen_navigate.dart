@@ -22,6 +22,7 @@ class _HomeScreenNavigateState extends State<HomeScreenNavigate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // ignore: deprecated_member_use
       backgroundColor: Theme.of(context).colorScheme.background,
       body: _screens[currentIndex],
       bottomNavigationBar: BottomNavigation(

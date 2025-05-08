@@ -13,7 +13,9 @@ class AddDialog extends StatefulWidget {
 }
 
 class _AddDialogState extends State<AddDialog> {
+  // ignore: prefer_final_fields
   TextEditingController _controller = TextEditingController();
+  // ignore: prefer_final_fields
   TextEditingController _twocontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -85,6 +87,7 @@ class _AddDialogState extends State<AddDialog> {
                   await box.add(task);
                   
                 widget.onTaskAdded(task);
+                // ignore: use_build_context_synchronously
                 Navigator.pop(context);
               },
               child: Container(

@@ -5,6 +5,7 @@ ThemeData lightMood = ThemeData(
   brightness: Brightness.light,
    cardColor: AppColors.whiteColor,
   colorScheme: ColorScheme.light(
+    // ignore: deprecated_member_use
     background: AppColors.whiteColor1
   ),
     iconTheme: const IconThemeData(
@@ -21,6 +22,7 @@ ThemeData darkMood = ThemeData(
   brightness: Brightness.dark,
    cardColor: AppColors.greyColor1,
   colorScheme: ColorScheme.dark(
+    // ignore: deprecated_member_use
     background: AppColors.greyColor1,
   ),
   textTheme:  TextTheme(

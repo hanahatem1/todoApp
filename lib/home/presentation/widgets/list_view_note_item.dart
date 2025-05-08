@@ -53,6 +53,7 @@ class _ListViewNoteItemState extends State<ListViewNoteItem> {
       },
       child: Container(
         decoration: BoxDecoration(
+            // ignore: deprecated_member_use
             color: Theme.of(context).colorScheme.background,
             borderRadius: BorderRadius.circular(12)),
         child: Column(
