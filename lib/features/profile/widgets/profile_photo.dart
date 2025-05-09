@@ -8,7 +8,7 @@ class ProfilePhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-       SizedBox(
+       const SizedBox(
         height: 110,
         width: 110,
         child:
@@ -18,11 +18,11 @@ class ProfilePhoto extends StatelessWidget {
         bottom: 10,
         right: 3,
         child: Container(
-          decoration: BoxDecoration(
+          decoration:const BoxDecoration(
             shape: BoxShape.circle,
             color: AppColors.blueColor,
           ),
-          child: Icon(Icons.add,size:20),
+          child:const  Icon(Icons.add,size:20),
         )
         )
       ]

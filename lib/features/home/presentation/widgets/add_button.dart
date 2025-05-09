@@ -12,7 +12,7 @@ class AddButton extends StatelessWidget {
       elevation: 0,
       shape: const CircleBorder(),
       backgroundColor: AppColors.blueColor,
-      child: Icon(Icons.add,color: AppColors.whiteColor1,),
+      child:const Icon(Icons.add,color: AppColors.whiteColor1,),
       onPressed: (){
         showDialog(
         context: context, 

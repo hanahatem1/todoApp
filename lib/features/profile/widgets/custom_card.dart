@@ -11,13 +11,13 @@ final IconData icon;
       color: Theme.of(context).cardColor,
       elevation: 2,
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding:const  EdgeInsets.all(12),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               text,
-              style: TextStyle(fontWeight: FontWeight.w500),
+              style:const  TextStyle(fontWeight: FontWeight.w500),
             ),
             Icon(icon,size: 24,)
           ],

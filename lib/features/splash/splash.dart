@@ -23,7 +23,7 @@ class SplashPage extends StatelessWidget {
                 width: 250,
               ),
               const SizedBox(height: 80),
-              Row(
+             const  Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
@@ -33,7 +33,7 @@ class SplashPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 8),
-              Text(
+             const  Text(
                 'Stay on top of your tasks and make the most of your time with simple task management',
                 style: TextStyle(
                   fontSize: 14,
@@ -42,9 +42,9 @@ class SplashPage extends StatelessWidget {
               const SizedBox(height: 20,),
              GestureDetector(
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (contex)=>HomeScreenNavigate()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (contex)=>const HomeScreenNavigate()));
               },
-               child:CustomButton(height: 40, width: double.infinity,text: 'Let\'s go',)
+               child:const CustomButton(height: 40, width: double.infinity,text: 'Let\'s go',)
              )
             ],
           ),

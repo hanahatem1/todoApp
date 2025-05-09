@@ -15,11 +15,11 @@ class NoTasksYet extends StatelessWidget {
         width: 200,
         height: 200,
       )),
-      Text(
+      const Text(
         'No Tasks yet',
         style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
       ),
-      Text(
+      const Text(
         'Add your to-dos tapping the pluse button below',
         style: TextStyle(fontSize: 13, color: AppColors.greyColor),
       ),

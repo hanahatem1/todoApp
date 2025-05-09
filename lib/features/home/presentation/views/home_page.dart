@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 const SizedBox(height: 14,),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 tasks.isEmpty
-                  ? NoTasksYet()
+                  ? const NoTasksYet()
                   : TasksWidget(tasks: tasks)
               ],
             ),

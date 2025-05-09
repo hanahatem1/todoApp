@@ -28,14 +28,14 @@ class _CalenderViewState extends State<CalenderView> {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
             child: TableCalendar(
               headerStyle:
-                  HeaderStyle(formatButtonVisible: false, titleCentered: true),
+                const  HeaderStyle(formatButtonVisible: false, titleCentered: true),
               availableGestures: AvailableGestures.all,
               selectedDayPredicate: (day) => isSameDay(day, today),
               focusedDay: today,
               firstDay: DateTime.utc(2010, 10, 10),
               lastDay: DateTime.utc(2030, 10, 10),
               onDaySelected: _onDaySelected,
-              calendarStyle: CalendarStyle(
+              calendarStyle:const CalendarStyle(
                 selectedDecoration: BoxDecoration(
                     color: AppColors.blueColor, shape: BoxShape.circle),
                 todayDecoration: BoxDecoration(

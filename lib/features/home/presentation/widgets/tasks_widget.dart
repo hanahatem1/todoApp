@@ -33,7 +33,7 @@ class TasksWidget extends StatelessWidget {
         ValueListenableBuilder(
           valueListenable: Hive.box<TaskModel>('to_do_app').listenable(),
           builder: (context, Box<TaskModel> box, _) {
-            return ListViewNote();
+            return const ListViewNote();
           },
         ),
       ],

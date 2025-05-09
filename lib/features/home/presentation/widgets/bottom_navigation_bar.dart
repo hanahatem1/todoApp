@@ -19,7 +19,7 @@ class BottomNavigation extends StatelessWidget {
         unselectedItemColor: AppColors.blackColor,
         currentIndex: currentIndex,
         onTap:onTap ,
-        items:  [
+        items:const  [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

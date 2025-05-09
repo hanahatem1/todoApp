@@ -11,15 +11,15 @@ final void Function(bool)? onThemeChanged;
   Widget build(BuildContext context) {
     return  Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 14,vertical: 40),
+        padding:const EdgeInsets.symmetric(horizontal: 14,vertical: 40),
         child: Column(
           children: [
-            SizedBox(height:30),
+           const SizedBox(height:30),
             Center(
               child: Column(
                 children: [
-                 ProfilePhoto(),
-                  SizedBox(height: 12,),
+                const ProfilePhoto(),
+                 const SizedBox(height: 12,),
                   Text('Hana Hatem',style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
@@ -27,16 +27,16 @@ final void Function(bool)? onThemeChanged;
                 ],
               ),
             ),
-            SizedBox(height: 25,),
-            CustomCard(text: 'Account details', icon: Icons.person),
-            SizedBox(height: 7,),
-            CustomCard(text: 'Notifactions', icon: Icons.notifications),
-            SizedBox(height: 7,),
-            CustomCardDarkMode(),
-            SizedBox(height: 7,),
-            CustomCard(text: 'Support', icon: Icons.contact_support),
-            SizedBox(height: 10,),
-            CustomButton(height: 45, width: 360, text: 'Sign Out')
+           const SizedBox(height: 25,),
+           const CustomCard(text: 'Account details', icon: Icons.person),
+            const SizedBox(height: 7,),
+            const CustomCard(text: 'Notifactions', icon: Icons.notifications),
+            const SizedBox(height: 7,),
+            const CustomCardDarkMode(),
+            const SizedBox(height: 7,),
+            const CustomCard(text: 'Support', icon: Icons.contact_support),
+            const SizedBox(height: 10,),
+            const CustomButton(height: 45, width: 360, text: 'Sign Out')
           ],
         ),
       ),

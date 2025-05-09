@@ -18,7 +18,7 @@ final String text;
         child: Center(
           child: Text(
             text,
-            style: TextStyle(color: AppColors.blackColor, fontSize: 16),
+            style:const TextStyle(color: AppColors.blackColor, fontSize: 16),
           ),
         ));
   }

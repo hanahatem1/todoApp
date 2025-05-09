@@ -17,12 +17,12 @@ class _CustomCardDarkModeState extends State<CustomCardDarkMode> {
       color:  Theme.of(context).cardColor,
       elevation: 2,
       child: Padding(
-        padding: EdgeInsets.all(4),
+        padding:const  EdgeInsets.all(4),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
+           const Padding(
+              padding: EdgeInsets.only(left: 10),
               child: Text(
                 'Dark mode',
                 style: TextStyle(fontWeight: FontWeight.w500),

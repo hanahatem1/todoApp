@@ -46,13 +46,13 @@ class _AddDialogState extends State<AddDialog> {
               cursorColor: AppColors.greyColor,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.greyColor),
+                    borderSide:const BorderSide(color: AppColors.greyColor),
                     borderRadius: BorderRadius.circular(12)),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.greyColor),
+                    borderSide:const BorderSide(color: AppColors.greyColor),
                     borderRadius: BorderRadius.circular(12)),
                 hintText: " Enter your task",
-                hintStyle: TextStyle(color: AppColors.greyColor),
+                hintStyle:const TextStyle(color: AppColors.greyColor),
               ),
             ),
             const SizedBox(
@@ -64,13 +64,13 @@ class _AddDialogState extends State<AddDialog> {
               cursorColor: AppColors.greyColor,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.greyColor),
+                    borderSide:const BorderSide(color: AppColors.greyColor),
                     borderRadius: BorderRadius.circular(12)),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.greyColor),
+                    borderSide:const BorderSide(color: AppColors.greyColor),
                     borderRadius: BorderRadius.circular(12)),
                 hintText: " Description",
-                hintStyle: TextStyle(color: AppColors.greyColor),
+                hintStyle:const TextStyle(color: AppColors.greyColor),
               ),
             ),
             const SizedBox(
@@ -96,7 +96,7 @@ class _AddDialogState extends State<AddDialog> {
                 decoration: BoxDecoration(
                     color: AppColors.blueColor,
                     borderRadius: BorderRadius.circular(12)),
-                child: Center(
+                child:const Center(
                     child: Text(
                   'Add',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
