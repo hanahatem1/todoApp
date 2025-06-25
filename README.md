@@ -16,7 +16,7 @@ It uses Hive for local data storage, supports dark mode, and has calendar integr
 ![Home Screen](screenshots/home_no_tasks.png)
 
 ###  Add Task
-![Add Task](screenshots/add_task.png)
+![Add Task](screenshots/tasks.png)
 
 ###  Calendar View
 ![Calendar View](screenshots/calender.png)
