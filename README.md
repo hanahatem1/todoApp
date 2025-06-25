@@ -10,6 +10,23 @@ It uses Hive for local data storage, supports dark mode, and has calendar integr
 - Dark and light mode support
 - View tasks by date with calendar
 
+## Screenshots
+
+###  Home Screen
+![Home Screen](screenshots/home_no_tasks.png)
+
+###  Add Task
+![Add Task](screenshots/add_task.png)
+
+###  Calendar View
+![Calendar View](screenshots/calender.png)
+
+###  Profile Screen
+![Profile Screen](screenshots/profile_sceen.png)
+
+###  Dark Mode 
+![Dark Profile](screenshots/dark_mode.png)
+
 ## Getting Started
 To run this project locally:
 
