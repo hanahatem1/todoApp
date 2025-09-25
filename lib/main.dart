@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:to_do_app/constant/themes.dart';
+import 'package:to_do_app/features/auth/login/views/login_view.dart';
 import 'package:to_do_app/features/home/data/models/task_model.dart';
 import 'package:to_do_app/features/splash/splash.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (context, ThemeMode currentMode, _) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: const SplashPage(),
+          home: LoginPage(),
           theme: lightMood,
           darkTheme: darkMood,
           themeMode: currentMode, 
