@@ -1,12 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do_app/features/home/presentation/widgets/custom_button.dart';
 import 'package:to_do_app/features/profile/widgets/custom_card.dart';
 import 'package:to_do_app/features/profile/widgets/custom_card_dark_mode.dart';
 import 'package:to_do_app/features/profile/widgets/profile_photo.dart';
 
-class ProfileView extends StatelessWidget {
+class ProfileView extends StatefulWidget {
   const ProfileView({super.key, this.onThemeChanged});
 final void Function(bool)? onThemeChanged;
+
+  @override
+  State<ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> {
+   String? username;
+
+  @override
+  void initState() {
+    super.initState();
+    loadUserData();
+  }
+
+ Future<void> loadUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      username = prefs.getString("username") ?? "No username found";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -20,9 +42,9 @@ final void Function(bool)? onThemeChanged;
                 children: [
                 const ProfilePhoto(),
                  const SizedBox(height: 12,),
-                  Text('Hana Hatem',style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  Text(username ?? 'No username found',style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       fontWeight: FontWeight.bold,
-                      fontSize: 17,
+                      fontSize: 17
                     ))
                 ],
               ),

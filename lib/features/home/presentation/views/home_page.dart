@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do_app/features/home/data/models/task_model.dart';
 import 'package:to_do_app/features/home/presentation/widgets/add_button.dart';
 import 'package:to_do_app/features/home/presentation/widgets/no_tasks_yet.dart';
@@ -14,7 +15,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final box = Hive.box<TaskModel>('to_do_app');
+  String? username;
+   @override
+  void initState() {
+    super.initState();
+    loadUserData();
+  }
 
+ Future<void> loadUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      username = prefs.getString("username") ?? "No username found";
+    });
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,16 +42,16 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 const SizedBox(height: 14,),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        Text('Hey, ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-                        Text('Hana Hatem ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                        const Text('Hey, ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                        Text(username ??'No username found', style:const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
                       ],
                     ),
-                    CircleAvatar(
+                    const CircleAvatar(
                       backgroundImage: AssetImage('assets/images/picture.jpg'),
                     )
                   ],
