@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/features/auth/login/views/login_view.dart';
 import 'package:to_do_app/features/auth/login/widgets/custom_button.dart';
 import 'package:to_do_app/features/auth/login/widgets/custom_text_field.dart';
@@ -65,6 +66,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     onTap: () async {
                       if (formKey.currentState!.validate()) {
                         await saveUserData();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                "Acoount created successfuly",
+                                style: TextStyle(color: AppColors.blackColor),
+                              ),
+                              backgroundColor: AppColors.greyColor,
+                            ),
+                          );
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                               builder: (context) => const LoginPage()),
