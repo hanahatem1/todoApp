@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:to_do_app/constant/colors.dart';
 import 'package:to_do_app/features/auth/login/widgets/custom_button.dart';
 import 'package:to_do_app/features/auth/login/widgets/custom_text_field.dart';
 import 'package:to_do_app/features/auth/signup/views/signup_page.dart';
@@ -18,12 +19,12 @@ class _LoginPageState extends State<LoginPage> {
   String? email;
   String? pass;
 
-  Future<bool> checkUserData() async{
-    final prefs= await SharedPreferences.getInstance();
+  Future<bool> checkUserData() async {
+    final prefs = await SharedPreferences.getInstance();
     final saveEmail = prefs.getString("email");
     final savePass = prefs.getString("password");
 
-    return email==saveEmail && pass==savePass;
+    return email == saveEmail && pass == savePass;
   }
 
   @override
@@ -61,15 +62,26 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 30),
                   customButton(
-                    onTap: () async{
+                    onTap: () async {
                       if (formKey.currentState!.validate()) {
-                        bool success= await checkUserData();
-                        if(success){
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                              builder: (context) => const HomeScreenNavigate()),
-                        );
-                      }
+                        bool success = await checkUserData();
+                        if (success) {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const HomeScreenNavigate()),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                "Invalid email or password",
+                                style: TextStyle(color: AppColors.blackColor),
+                              ),
+                              backgroundColor: AppColors.greyColor,
+                            ),
+                          );
+                        }
                       }
                     },
                     text: 'Login',
