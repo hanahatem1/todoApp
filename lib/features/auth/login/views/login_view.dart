@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do_app/features/auth/login/widgets/custom_button.dart';
 import 'package:to_do_app/features/auth/login/widgets/custom_text_field.dart';
 import 'package:to_do_app/features/auth/signup/views/signup_page.dart';
 import 'package:to_do_app/features/home/presentation/views/home_page.dart';
+import 'package:to_do_app/features/home/presentation/widgets/home_screen_navigate.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -15,6 +17,14 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> formKey = GlobalKey();
   String? email;
   String? pass;
+
+  Future<bool> checkUserData() async{
+    final prefs= await SharedPreferences.getInstance();
+    final saveEmail = prefs.getString("email");
+    final savePass = prefs.getString("password");
+
+    return email==saveEmail && pass==savePass;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,12 +61,15 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 30),
                   customButton(
-                    onTap: () {
+                    onTap: () async{
                       if (formKey.currentState!.validate()) {
+                        bool success= await checkUserData();
+                        if(success){
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
-                              builder: (context) => const HomePage()),
+                              builder: (context) => const HomeScreenNavigate()),
                         );
+                      }
                       }
                     },
                     text: 'Login',

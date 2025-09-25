@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do_app/features/auth/login/views/login_view.dart';
 import 'package:to_do_app/features/auth/login/widgets/custom_button.dart';
 import 'package:to_do_app/features/auth/login/widgets/custom_text_field.dart';
@@ -16,6 +17,13 @@ class _RegisterPageState extends State<RegisterPage> {
   String? email;
   String? pass;
   String? username;
+
+  Future<void> saveUserData() async{
+    final prefs=await SharedPreferences.getInstance();
+    await prefs.setString("email", email!);
+    await prefs.setString("password", pass!);
+    await prefs.setString("username", username!);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +62,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   const SizedBox(height: 30),
                   customButton(
-                    onTap: () {
+                    onTap: () async {
                       if (formKey.currentState!.validate()) {
-                        
+                        await saveUserData();
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                               builder: (context) => const LoginPage()),
