@@ -13,9 +13,9 @@ double notDone;
           value: doneTask,
           color: AppColors.blueColor,
           title: "Done",
-          radius: 60,
+          radius: 70,
           titleStyle: const TextStyle(
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.whiteColor
               )),
@@ -23,9 +23,9 @@ double notDone;
           value: notDone,
           color:  AppColors.greyColor1,
           title: "Not Done",
-          radius: 60,
+          radius: 70,
           titleStyle: const TextStyle(
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.whiteColor
               )),
