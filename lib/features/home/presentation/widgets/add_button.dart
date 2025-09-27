@@ -11,7 +11,7 @@ class AddButton extends StatelessWidget {
     return FloatingActionButton(
       elevation: 0,
       shape: const CircleBorder(),
-      backgroundColor: AppColors.whiteColor1,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child:const Icon(Icons.add,color: AppColors.blueColor,),
       onPressed: (){
         showDialog(
