@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do_app/features/home/data/models/task_model.dart';
-import 'package:to_do_app/features/home/presentation/widgets/add_button.dart';
 import 'package:to_do_app/features/home/presentation/widgets/no_tasks_yet.dart';
 import 'package:to_do_app/features/home/presentation/widgets/tasks_widget.dart';
 
@@ -65,7 +64,6 @@ class _HomePageState extends State<HomePage> {
     );
         }
      ),
-   floatingActionButton: AddButton(onTaskAdded: (_){}),
     );
   }
 }
