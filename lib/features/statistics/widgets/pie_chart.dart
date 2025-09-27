@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:to_do_app/constant/colors.dart';
 
 class PieChartShape extends StatelessWidget {
-  const PieChartShape({super.key});
-
+   PieChartShape({super.key,required this.doneTask,required this.notDone});
+double doneTask;
+double notDone;
   @override
   Widget build(BuildContext context) {
     return PieChart(PieChartData(sections: [
       PieChartSectionData(
-          value: 6,
+          value: doneTask,
           color: AppColors.blueColor,
           title: "Done",
           radius: 60,
@@ -19,7 +20,7 @@ class PieChartShape extends StatelessWidget {
               color: AppColors.whiteColor
               )),
       PieChartSectionData(
-          value: 4,
+          value: notDone,
           color:  AppColors.greyColor1,
           title: "Not Done",
           radius: 60,
