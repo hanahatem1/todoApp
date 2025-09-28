@@ -26,7 +26,6 @@ class _HomeScreenNavigateState extends State<HomeScreenNavigate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
       body: _screens[currentIndex],
       floatingActionButton: AddButton(
         onTaskAdded: (task) {
@@ -34,8 +33,8 @@ class _HomeScreenNavigateState extends State<HomeScreenNavigate> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-       // shape: const CircularNotchedRectangle(),
-        notchMargin: 16,
+        shape: const CircularNotchedRectangle(),
+        notchMargin: 9,
         color: AppColors.blueColor,
         child: SizedBox(
           height: 60,
@@ -141,7 +140,7 @@ class _HomeScreenNavigateState extends State<HomeScreenNavigate> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        Icons.bar_chart,
+                        Icons.pie_chart,
                         color: currentIndex == 3 
                             ? AppColors.whiteColor 
                             : AppColors.whiteColor.withOpacity(0.6),

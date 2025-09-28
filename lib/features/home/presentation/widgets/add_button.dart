@@ -9,10 +9,10 @@ class AddButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      elevation: 0,
+      elevation: 3,
       shape: const CircleBorder(),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      child:const Icon(Icons.add,color: AppColors.blueColor,),
+      backgroundColor: AppColors.blueColor,
+      child:const Icon(Icons.add,color: AppColors.whiteColor,),
       onPressed: (){
         showDialog(
         context: context, 

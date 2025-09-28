@@ -23,7 +23,7 @@ class BottomNavigation extends StatelessWidget {
           _buildNavItem(Icons.calendar_today, 'Calendar', 1),
           const SizedBox(width: 80),
           _buildNavItem(Icons.person, 'Profile', 2),
-          _buildNavItem(Icons.bar_chart, 'Statistics', 3),
+          _buildNavItem(Icons.pie_chart, 'Statistics', 3),
         ],
       ),
     );
